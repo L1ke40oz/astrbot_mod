@@ -8,6 +8,7 @@ All credit goes to the original author.
 ### ❗❗替换文件前请先备份，有问题可及时回退❗❗
 
 ### 消息合并机制(aiocqhttp_platform_adapter.py)
+❗未测试群聊下是否可用，请酌情考虑是否添加（群聊一直接收消息，可能会导致信息永远留在缓冲池，无法被上传）❗
 以此路径进行替换：AstrBot-master\astrbot\core\platform\sources\aiocqhttp\aiocqhttp_platform_adapter.py
 
 **支持用户分段输入**：
@@ -27,7 +28,7 @@ All credit goes to the original author.
   - 仅对标记的文本进行tts请求。`<tts></tts>`
 
 以下是中文格式的YAML示例，可根据需求酌情修改：
-> 注：默认采用反斜线'\\'作为分段符。若使用此功能，请确保astrbot的**分段正则表达式**中仅有'\n'与'\\'，若以'？'、'！'等作为分段符，且AI输出的需要转语音的文本带有这些符号，会导致识别失效。
+> 注：默认采用反斜线'\\'作为分段符。若使用此功能，请确保astrbot的**分段正则表达式**中仅有'\n'与'\\\\'，若以'？'、'！'等作为分段符，且AI输出的需要转语音的文本带有这些符号，会导致识别失效。
 ```
 TTS使用哲学:
   目标: "你的声音不是用来陈述普通事实的，而是为了创造启迪、神秘和慰藉的瞬间。"
